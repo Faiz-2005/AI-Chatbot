@@ -1,0 +1,1882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ============================================================
+       DOCUMENT METADATA & CONFIGURATION
+       ============================================================
+       Command: Define basic HTML structure, character encoding, viewport,
+       and page title for the Jarvis AI application.
+  ============================================================ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vision AI v10.0 - Ultra Advanced Edition</title>
+  
+  <!-- ============================================================
+       EXTERNAL DEPENDENCIES
+       ============================================================
+       Command: Load Tailwind CSS framework and Font Awesome icons library
+       for styling and iconography. These are served from CDN.
+  ============================================================ -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- ============================================================
+       GLOBAL STYLESHEET & THEMING
+       ============================================================
+       Command: Define CSS custom properties (variables) for consistent theming
+       throughout the application. Includes color palette, glass morphism effects,
+       animations, and responsive design rules.
+  ============================================================ -->
+  <style>
+    /* ================== COLOR & THEME VARIABLES ================== */
+    :root{
+      --primary:#00d4ff;      /* Command: Bright cyan for primary elements */
+      --secondary:#7c3aed;    /* Command: Purple for secondary elements */
+      --accent:#ff006e;       /* Command: Pink for accent highlights */
+      --success:#10b981;      /* Command: Green for success messages */
+      --warning:#f59e0b;      /* Command: Orange for warning messages */
+      --danger:#ef4444;       /* Command: Red for error messages */
+      --bg-dark:#0a0e27;      /* Command: Very dark blue for main background */
+      --glass:rgba(15,23,42,0.92);  /* Command: Glass morphism background */
+      --text:#e2e8f0;         /* Command: Light gray for text content */
+    }
+    
+    /* ================== UNIVERSAL RESET ================== */
+    /* Command: Remove default browser margins/padding and apply border-box model */
+    *{margin:0;padding:0;box-sizing:border-box}
+    
+    /* ================== BODY STYLING ================== */
+    /* Command: Apply gradient background, set font, enable smooth scrolling */
+    body{
+      background:linear-gradient(135deg,var(--bg-dark) 0%,#1a1f3a 50%,#2d1b4e 100%);
+      font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+      color:var(--text);
+      min-height:100vh;
+      overflow-x:hidden;
+      position:relative;
+    }
+    
+    /* ================== ANIMATED BACKGROUND PARTICLES ================== */
+    /* Command: Create floating particle effects in background for visual interest */
+    .particles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
+    .particle{
+      position:absolute;width:4px;height:4px;background:rgba(0,212,255,0.9);border-radius:50%;
+      animation:ultraFloat 12s infinite ease-in-out;box-shadow:0 0 20px rgba(0,212,255,0.7);
+    }
+    @keyframes ultraFloat{
+      /* Command: Animate particles moving in 3D space with rotation and scaling */
+      0%{transform:translate(0,0) rotate(0deg) scale(1);opacity:1}
+      25%{transform:translate(100px,-150px) rotate(90deg) scale(1.3);opacity:0.7}
+      50%{transform:translate(-80px,-250px) rotate(180deg) scale(0.9);opacity:0.4}
+      75%{transform:translate(120px,-180px) rotate(270deg) scale(1.2);opacity:0.8}
+      100%{transform:translate(0,0) rotate(360deg) scale(1);opacity:1}
+    }
+    
+    /* ================== GLASS MORPHISM EFFECT ================== */
+    /* Command: Create frosted glass effect with blur and transparency */
+    .glass{
+      background:var(--glass);backdrop-filter:blur(35px) saturate(200%);
+      -webkit-backdrop-filter:blur(35px) saturate(200%);
+      border:1px solid rgba(148,163,184,0.2);border-radius:28px;
+      box-shadow:0 12px 40px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.15);
+      padding:45px;position:relative;overflow:hidden;
+      transition:all 0.4s cubic-bezier(0.4,0,0.2,1);
+    }
+    /* Command: Add hover effect - lift element and increase glow */
+    .glass:hover{
+      transform:translateY(-5px);
+      box-shadow:0 20px 60px rgba(0,212,255,0.3),inset 0 1px 0 rgba(255,255,255,0.2);
+    }
+    /* Command: Add animated gradient border to glass elements */
+    .glass::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:4px;
+      background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent),var(--primary));
+      background-size:200% 100%;opacity:0.9;
+      animation:gradientShift 4s ease infinite;
+    }
+    @keyframes gradientShift{
+      /* Command: Shift gradient across border continuously */
+      0%,100%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+    }
+    
+    /* ================== LOGIN PAGE LAYOUT ================== */
+    /* Command: Center login form on page with flex layout */
+    .login-container{
+      display:flex;align-items:center;justify-content:center;
+      min-height:100vh;padding:20px;position:relative;z-index:1;
+    }
+    /* Command: Set max width for login form and add entrance animation */
+    .login-box{max-width:480px;width:100%;animation:heroEntry 1s ease-out}
+    @keyframes heroEntry{
+      /* Command: Slide up and scale animation on page load */
+      0%{opacity:0;transform:translateY(50px) scale(0.9)}
+      100%{opacity:1;transform:translateY(0) scale(1)}
+    }
+    
+    /* ================== TITLE & HEADING STYLES ================== */
+    /* Command: Create large gradient text effect with glow animation */
+    .title{
+      font-size:4.5rem;font-weight:900;
+      background:linear-gradient(135deg,var(--primary) 0%,var(--secondary) 50%,var(--accent) 100%);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+      background-clip:text;text-align:center;margin-bottom:12px;letter-spacing:-3px;
+      animation:titleGlow 4s ease-in-out infinite;filter:drop-shadow(0 0 30px rgba(0,212,255,0.4));
+    }
+    @keyframes titleGlow{
+      /* Command: Pulse glow effect around title */
+      0%,100%{filter:drop-shadow(0 0 30px rgba(0,212,255,0.4)) brightness(1)}
+      50%{filter:drop-shadow(0 0 50px rgba(124,58,237,0.6)) brightness(1.4)}
+    }
+    
+    /* ================== SUBTITLE & SECONDARY TEXT ================== */
+    /* Command: Style subtitle with pulse animation */
+    .subtitle{
+      text-align:center;color:#94a3b8;font-size:1.25rem;margin-bottom:18px;
+      font-weight:600;letter-spacing:1.5px;animation:subtitlePulse 3s ease-in-out infinite;
+    }
+    @keyframes subtitlePulse{
+      /* Command: Subtle scale and opacity pulse */
+      0%,100%{opacity:0.8;transform:scale(1)}
+      50%{opacity:1;transform:scale(1.02)}
+    }
+    
+    /* ================== CREATOR BADGE ================== */
+    /* Command: Style creator attribution badge with gradient and float animation */
+    .creator-badge{
+      display:inline-block;
+      background:linear-gradient(135deg,var(--secondary),var(--accent));
+      color:white;padding:10px 28px;border-radius:50px;font-size:1rem;
+      font-weight:bold;margin:0 auto 40px;
+      box-shadow:0 6px 25px rgba(124,58,237,0.6);
+      animation:badgeFloat 3s ease-in-out infinite;
+      position:relative;overflow:hidden;cursor:pointer;
+      transition:all 0.3s;
+    }
+    /* Command: Scale up and rotate on hover */
+    .creator-badge:hover{transform:scale(1.1) rotate(2deg);box-shadow:0 10px 40px rgba(255,0,110,0.8)}
+    @keyframes badgeFloat{
+      /* Command: Float up and down continuously */
+      0%,100%{transform:translateY(0px)}
+      50%{transform:translateY(-8px)}
+    }
+    
+    /* ================== TAB NAVIGATION ================== */
+    /* Command: Create tabbed interface for Login/Signup switching */
+    .tabs{
+      display:flex;margin-bottom:36px;border-bottom:3px solid #334155;
+      border-radius:12px;overflow:hidden;background:rgba(30,41,59,0.5);
+      box-shadow:inset 0 2px 8px rgba(0,0,0,0.3);
+    }
+    /* Command: Style individual tab buttons */
+    .tab{
+      flex:1;padding:18px;text-align:center;font-weight:800;cursor:pointer;
+      transition:all 0.4s cubic-bezier(0.4,0,0.2,1);position:relative;
+      color:#94a3b8;font-size:1.05rem;letter-spacing:0.8px;
+    }
+    /* Command: Add animated underline to tabs on active state */
+    .tab::before{
+      content:'';position:absolute;bottom:0;left:50%;width:0;height:5px;
+      background:linear-gradient(90deg,var(--primary),var(--secondary));
+      transform:translateX(-50%);transition:width 0.4s;border-radius:5px 5px 0 0;
+    }
+    /* Command: Hover state for tabs */
+    .tab:hover{background:rgba(0,212,255,0.12);color:#cbd5e1;transform:translateY(-2px)}
+    /* Command: Active tab styling */
+    .tab.active{color:var(--primary);background:rgba(0,212,255,0.2)}
+    .tab.active::before{width:100%}
+    
+    /* ================== INPUT FIELD STYLING ================== */
+    /* Command: Style text input fields with glass effect and focus states */
+    .input-group{margin-bottom:24px;position:relative}
+    .input-box{
+      background:rgba(30,41,59,0.8);
+      border:3px solid rgba(100,116,139,0.4);
+      border-radius:20px;padding:20px 24px;color:var(--text);width:100%;
+      font-size:1.08rem;transition:all 0.4s cubic-bezier(0.4,0,0.2,1);
+      backdrop-filter:blur(12px);font-weight:600;
+    }
+    /* Command: Enhanced focus state with glow and lift effect */
+    .input-box:focus{
+      outline:none;border-color:var(--primary);
+      box-shadow:0 0 40px rgba(0,212,255,0.5),0 0 80px rgba(0,212,255,0.3),inset 0 2px 8px rgba(0,212,255,0.2);
+      background:rgba(30,41,59,0.98);transform:translateY(-4px) scale(1.01);
+    }
+    /* Command: Style placeholder text */
+    .input-box::placeholder{color:#94a3b8;opacity:0.9}
+    
+    /* ================== CAPTCHA CONTAINER ================== */
+    /* Command: Style captcha image display and refresh button area */
+    .captcha-container{text-align:center;margin-bottom:18px;position:relative}
+    .captcha-img{
+      max-width:100%;height:auto;border-radius:16px;margin-bottom:16px;display:inline-block;
+      border:3px solid rgba(0,212,255,0.6);box-shadow:0 8px 25px rgba(0,212,255,0.3);
+      transition:all 0.3s;animation:captchaGlow 2s ease-in-out infinite;cursor:pointer;
+    }
+    /* Command: Hover effect for captcha image */
+    .captcha-img:hover{transform:scale(1.05) rotate(1deg);box-shadow:0 12px 40px rgba(0,212,255,0.5)}
+    @keyframes captchaGlow{
+      /* Command: Alternate glow colors */
+      0%,100%{box-shadow:0 8px 25px rgba(0,212,255,0.3)}
+      50%{box-shadow:0 12px 40px rgba(124,58,237,0.5)}
+    }
+    
+    /* ================== PRIMARY ACTION BUTTON ================== */
+    /* Command: Style main gradient button with shine effect on hover */
+    .btn-gradient{
+      background:linear-gradient(135deg,var(--primary) 0%,var(--secondary) 100%);
+      color:white;padding:18px;border:none;border-radius:20px;font-weight:800;
+      cursor:pointer;width:100%;font-size:1.2rem;
+      transition:all 0.4s cubic-bezier(0.4,0,0.2,1);
+      box-shadow:0 8px 25px rgba(0,212,255,0.4);position:relative;overflow:hidden;
+      letter-spacing:1px;text-transform:uppercase;
+    }
+    /* Command: Create shine effect with pseudo-element */
+    .btn-gradient::before{
+      content:'';position:absolute;top:0;left:-150%;width:150%;height:100%;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);
+      transition:left 0.8s;
+    }
+    /* Command: Trigger shine animation on hover */
+    .btn-gradient:hover::before{left:150%}
+    /* Command: Add lift and glow on hover */
+    .btn-gradient:hover{
+      transform:translateY(-6px) scale(1.03);
+      box-shadow:0 16px 45px rgba(0,212,255,0.6),0 0 60px rgba(124,58,237,0.4);
+    }
+    /* Command: Press effect on click */
+    .btn-gradient:active{transform:translateY(-2px) scale(0.98)}
+    /* Command: Disabled state styling */
+    .btn-gradient:disabled{opacity:0.5;cursor:not-allowed;transform:none}
+    
+    /* ================== SECONDARY BUTTON (REFRESH) ================== */
+    /* Command: Style secondary button for captcha refresh */
+    .btn-refresh{
+      background:linear-gradient(135deg,#06b6d4,#3b82f6);
+      font-size:1.05rem;padding:16px;margin-bottom:18px;
+    }
+    
+    /* ================== LINK STYLING ================== */
+    /* Command: Style clickable links with hover glow effect */
+    .link{
+      color:#60a5fa;font-size:1rem;text-decoration:underline;cursor:pointer;
+      transition:all 0.3s;font-weight:700;position:relative;display:inline-block;
+    }
+    .link:hover{color:var(--primary);text-shadow:0 0 15px rgba(0,212,255,0.6)}
+    
+    /* ================== SIDEBAR NAVIGATION ================== */
+    /* Command: Fixed position sidebar for main navigation menu */
+    .sidebar{
+      position:fixed;left:0;top:0;width:320px;height:100vh;
+      background:rgba(10,14,39,0.98);border-right:2px solid rgba(148,163,184,0.2);
+      padding:40px 28px;overflow-y:auto;z-index:100;
+      box-shadow:8px 0 35px rgba(0,0,0,0.6);
+      backdrop-filter:blur(25px);transition:transform 0.3s;
+    }
+    /* Command: Hide sidebar with transform (smooth animation) */
+    .sidebar.hidden{transform:translateX(-100%)}
+    
+    /* ================== MAIN CONTENT AREA ================== */
+    /* Command: Adjust main content margin to accommodate sidebar */
+    .main-content{
+      margin-left:320px;padding:40px;min-height:100vh;
+      position:relative;z-index:1;transition:margin-left 0.3s;
+    }
+    /* Command: Full width layout when sidebar is hidden */
+    .main-content.full-width{margin-left:0}
+    
+    /* ================== NAVIGATION ITEMS ================== */
+    /* Command: Style sidebar navigation items with hover and active states */
+    .nav-item{
+      padding:20px 24px;margin:14px 0;border-radius:18px;cursor:pointer;
+      transition:all 0.4s cubic-bezier(0.4,0,0.2,1);
+      border-left:5px solid transparent;display:flex;align-items:center;
+      gap:18px;font-size:17px;color:#cbd5e1;font-weight:700;
+      position:relative;overflow:hidden;
+    }
+    /* Command: Hover effect with color change and slide */
+    .nav-item:hover{
+      background:rgba(0,212,255,0.2);border-left-color:var(--primary);
+      transform:translateX(10px);color:white;
+      box-shadow:0 6px 20px rgba(0,212,255,0.3);
+    }
+    /* Command: Active nav item styling */
+    .nav-item.active{
+      background:rgba(0,212,255,0.3);border-left-color:var(--primary);
+      box-shadow:0 0 30px rgba(0,212,255,0.4);color:white;
+    }
+    
+    /* ================== STATISTICS CARD GRID ================== */
+    /* Command: Create responsive grid for stat cards */
+    .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:28px;margin-bottom:40px}
+    /* Command: Style individual statistic cards */
+    .stat-card{
+      background:rgba(30,41,59,0.9);border:3px solid rgba(0,212,255,0.4);
+      border-radius:24px;padding:32px;text-align:center;
+      box-shadow:0 8px 25px rgba(0,0,0,0.3);
+      transition:all 0.4s cubic-bezier(0.4,0,0.2,1);
+      position:relative;overflow:hidden;
+    }
+    /* Command: Stat card hover effect - lift and glow */
+    .stat-card:hover{
+      transform:translateY(-10px) scale(1.02);border-color:var(--primary);
+      box-shadow:0 16px 50px rgba(0,212,255,0.5);
+    }
+    /* Command: Large number display with glow and pulse */
+    .stat-value{
+      font-size:3.5rem;font-weight:900;color:var(--primary);
+      text-shadow:0 0 20px rgba(0,212,255,0.5);margin-bottom:10px;
+      animation:statPulse 2s ease-in-out infinite;
+    }
+    @keyframes statPulse{
+      /* Command: Gentle scale pulse animation */
+      0%,100%{transform:scale(1)}
+      50%{transform:scale(1.05)}
+    }
+    /* Command: Stat card label styling */
+    .stat-label{font-size:1.05rem;color:#94a3b8;font-weight:700;letter-spacing:0.8px}
+    
+    /* ================== CHAT INTERFACE ================== */
+    /* Command: Container for chat message display with scrolling */
+    .chat-container{max-height:600px;overflow-y:auto;padding:20px;margin-bottom:24px}
+    /* Command: Individual chat message styling */
+    .chat-msg{
+      padding:20px 28px;border-radius:20px;margin:16px 0;
+      animation:msgSlideIn 0.6s cubic-bezier(0.4,0,0.2,1);
+      box-shadow:0 6px 20px rgba(0,0,0,0.3);max-width:82%;
+      word-wrap:break-word;position:relative;
+    }
+    @keyframes msgSlideIn{
+      /* Command: Message entrance animation */
+      0%{opacity:0;transform:translateY(30px) scale(0.9)}
+      100%{opacity:1;transform:translateY(0) scale(1)}
+    }
+    /* Command: User message styling (blue, right-aligned) */
+    .user-msg{
+      background:linear-gradient(135deg,var(--primary),#0099cc);
+      margin-left:auto;color:white;border-bottom-right-radius:6px;
+    }
+    /* Command: AI message styling (dark, left-aligned) */
+    .ai-msg{
+      background:rgba(30,41,59,0.95);border:3px solid rgba(0,212,255,0.4);
+      margin-right:auto;border-bottom-left-radius:6px;
+    }
+    /* Command: System message styling (centered purple) */
+    .sys-msg{
+      background:rgba(124,58,237,0.4);max-width:90%;margin:0 auto;
+      text-align:center;font-size:15px;border:3px solid rgba(124,58,237,0.5);
+      color:#e9d5ff;
+    }
+    
+    /* ================== GRADIENT TEXT ================== */
+    /* Command: Apply multi-color gradient to text content */
+    .gradient-text{
+      background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+      background-clip:text;font-weight:900;
+    }
+    
+    /* ================== APPLICATION GRID ================== */
+    /* Command: Grid layout for app launcher icons */
+    .app-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:24px;margin:30px 0}
+    /* Command: Individual app icon styling */
+    .app-icon{
+      background:rgba(30,41,59,0.9);border:3px solid rgba(100,116,139,0.4);
+      border-radius:24px;padding:24px;text-align:center;cursor:pointer;
+      transition:all 0.4s cubic-bezier(0.4,0,0.2,1);
+      position:relative;overflow:hidden;
+    }
+    /* Command: App icon hover effect */
+    .app-icon:hover{
+      transform:translateY(-12px) scale(1.05);
+      border-color:var(--primary);
+      box-shadow:0 16px 40px rgba(0,212,255,0.5);
+    }
+    /* Command: Icon glyph styling with gradient */
+    .app-icon i{font-size:3rem;margin-bottom:12px;
+      background-image:linear-gradient(135deg,var(--primary),var(--secondary));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+      background-clip:text;transition:transform 0.3s;
+    }
+    /* Command: Icon scale and rotate on parent hover */
+    .app-icon:hover i{transform:scale(1.2) rotate(5deg)}
+    /* Command: App label text styling */
+    .app-icon span{display:block;font-size:0.95rem;font-weight:700;color:#cbd5e1}
+    
+    /* ================== NOTIFICATION TOASTS ================== */
+    /* Command: Position notification messages in top-right corner */
+    .notification{
+      position:fixed;top:24px;right:24px;
+      background:rgba(15,23,42,0.97);backdrop-filter:blur(25px);
+      border:3px solid var(--primary);border-radius:20px;
+      padding:24px 32px;box-shadow:0 12px 40px rgba(0,0,0,0.5);
+      z-index:1000;animation:notifSlideIn 0.6s cubic-bezier(0.4,0,0.2,1);
+      min-width:320px;
+    }
+    @keyframes notifSlideIn{
+      /* Command: Slide in from right with scale animation */
+      0%{opacity:0;transform:translateX(120px) scale(0.8)}
+      100%{opacity:1;transform:translateX(0) scale(1)}
+    }
+    /* Command: Success notification styling (green border) */
+    .notification.success{border-color:var(--success)}
+    /* Command: Error notification styling (red border) */
+    .notification.error{border-color:var(--danger)}
+    /* Command: Warning notification styling (orange border) */
+    .notification.warning{border-color:var(--warning)}
+    
+    /* ================== UTILITY CLASSES ================== */
+    /* Command: Hide element completely */
+    .hidden{display:none!important}
+    
+    /* ================== MENU TOGGLE BUTTON ================== */
+    /* Command: Floating menu toggle button for sidebar */
+    .menu-toggle{
+      position:fixed;top:24px;left:24px;z-index:101;
+      background:rgba(0,212,255,0.3);border:3px solid var(--primary);
+      width:60px;height:60px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      cursor:pointer;font-size:1.5rem;color:white;
+      transition:all 0.3s;box-shadow:0 6px 20px rgba(0,212,255,0.4);
+    }
+    /* Command: Rotate and scale on hover */
+    .menu-toggle:hover{
+      transform:scale(1.1) rotate(90deg);
+      box-shadow:0 10px 30px rgba(0,212,255,0.6);
+    }
+    
+    /* ================== TYPING INDICATOR ================== */
+    /* Command: Three dot animation for AI thinking state */
+    .typing-indicator{display:flex;gap:6px;padding:12px}
+    .typing-dot{
+      width:10px;height:10px;background:var(--primary);
+      border-radius:50%;animation:typingBounce 1.4s ease-in-out infinite;
+      box-shadow:0 0 10px rgba(0,212,255,0.6);
+    }
+    /* Command: Stagger animation delays for cascade effect */
+    .typing-dot:nth-child(1){animation-delay:0s}
+    .typing-dot:nth-child(2){animation-delay:0.2s}
+    .typing-dot:nth-child(3){animation-delay:0.4s}
+    @keyframes typingBounce{
+      /* Command: Bounce dots up and down */
+      0%,60%,100%{transform:translateY(0)}
+      30%{transform:translateY(-15px)}
+    }
+    
+    /* ================== INPUT WRAPPER & SEND BUTTON ================== */
+    /* Command: Flex container for chat input controls */
+    .input-wrapper{
+      position:relative;display:flex;gap:12px;align-items:center;
+    }
+    /* Command: Circular send button styling */
+    .send-btn{
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      border:none;border-radius:50%;width:60px;height:60px;
+      display:flex;align-items:center;justify-content:center;
+      cursor:pointer;transition:all 0.3s;
+      box-shadow:0 6px 20px rgba(0,212,255,0.4);flex-shrink:0;
+    }
+    /* Command: Send button hover and rotation effect */
+    .send-btn:hover{
+      transform:scale(1.1) rotate(15deg);
+      box-shadow:0 10px 30px rgba(0,212,255,0.6);
+    }
+    /* Command: Send button icon styling */
+    .send-btn i{color:white;font-size:1.5rem}
+    
+    /* ================== ATTACH & VOICE BUTTONS ================== */
+    /* Command: Circular buttons for file and voice input */
+    .attach-btn{
+      background:rgba(30,41,59,0.9);border:3px solid rgba(0,212,255,0.4);
+      border-radius:50%;width:52px;height:52px;display:flex;align-items:center;
+      justify-content:center;cursor:pointer;flex-shrink:0;font-size:1.6rem;
+      color:var(--primary);box-shadow:0 6px 20px rgba(0,212,255,0.4);
+      transition:all 0.3s;
+    }
+    /* Command: Attach button hover effect */
+    .attach-btn:hover{
+      transform:scale(1.1);box-shadow:0 10px 30px rgba(0,212,255,0.6);
+    }
+    
+    /* Command: Voice input button with same styling as attach */
+    .voice-btn{
+      background:rgba(30,41,59,0.9);border:3px solid rgba(0,212,255,0.4);
+      border-radius:50%;width:52px;height:52px;display:flex;align-items:center;
+      justify-content:center;cursor:pointer;flex-shrink:0;font-size:1.6rem;
+      color:var(--primary);box-shadow:0 6px 20px rgba(0,212,255,0.4);
+      transition:all 0.3s;
+    }
+    /* Command: Voice button hover with pulse animation */
+    .voice-btn:hover{
+      transform:scale(1.1);box-shadow:0 10px 30px rgba(0,212,255,0.6);
+      animation:voicePulse 1.5s infinite;
+    }
+    @keyframes voicePulse{
+      /* Command: Pulse glow when recording */
+      0%,100%{box-shadow:0 6px 20px rgba(0,212,255,0.4)}
+      50%{box-shadow:0 0 30px rgba(0,212,255,0.9)}
+    }
+    
+    /* ================== ATTACH MENU DROPDOWN ================== */
+    /* Command: Popup menu for attachment options */
+    .attach-menu{
+      position:absolute;
+      bottom:78px;
+      left:8px;
+      background:var(--glass);
+      backdrop-filter:blur(30px);
+      border:1px solid rgba(148,163,184,0.3);
+      border-radius:20px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.5);
+      padding:8px 0;
+      min-width:280px;
+      z-index:100;
+      overflow:hidden;
+    }
+    /* Command: Individual menu item styling */
+    .attach-menu div{
+      padding:14px 24px;
+      display:flex;
+      align-items:center;
+      gap:16px;
+      font-weight:600;
+      color:var(--text);
+      cursor:pointer;
+      transition:all 0.2s;
+    }
+    /* Command: Menu item hover effect */
+    .attach-menu div:hover{
+      background:rgba(0,212,255,0.15);
+    }
+    /* Command: Menu item icon styling */
+    .attach-menu div i{
+      width:24px;
+      font-size:1.3rem;
+      color:var(--primary);
+    }
+    
+    /* ================== SPEAK BUTTON ================== */
+    /* Command: Small button for text-to-speech inside messages */
+    .speak-btn{
+      position:absolute;
+      bottom:12px;
+      right:12px;
+      background:rgba(0,212,255,0.2);
+      border:2px solid rgba(0,212,255,0.4);
+      border-radius:9999px;
+      padding:4px 14px;
+      font-size:0.85rem;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      cursor:pointer;
+      transition:all 0.3s;
+      color:var(--primary);
+    }
+    /* Command: Speak button hover effect */
+    .speak-btn:hover{
+      background:rgba(0,212,255,0.3);
+      transform:scale(1.05);
+    }
+    
+    /* ================== FEATURE BUTTONS ================== */
+    /* Command: Quick action buttons throughout interface */
+    .feature-btn{
+      background:rgba(30,41,59,0.9);border:3px solid rgba(0,212,255,0.4);
+      border-radius:16px;padding:16px 24px;margin:8px;
+      cursor:pointer;transition:all 0.3s;display:inline-block;
+    }
+    /* Command: Feature button hover effect */
+    .feature-btn:hover{
+      background:rgba(0,212,255,0.2);transform:translateY(-4px);
+      box-shadow:0 8px 25px rgba(0,212,255,0.5);
+    }
+    
+    /* ================== GENERATED IMAGE DISPLAY ================== */
+    /* Command: Style images generated by AI */
+    .generated-image{
+      max-width:100%;border-radius:20px;margin:20px 0;
+      box-shadow:0 12px 40px rgba(0,212,255,0.4);
+      animation:imageAppear 0.6s ease-out;
+    }
+    @keyframes imageAppear{
+      /* Command: Scale and fade in animation for images */
+      0%{opacity:0;transform:scale(0.8)}
+      100%{opacity:1;transform:scale(1)}
+    }
+    
+    /* ================== CUSTOM SCROLLBAR ================== */
+    /* Command: Style scrollbars to match theme */
+    ::-webkit-scrollbar{width:12px}
+    ::-webkit-scrollbar-track{background:rgba(30,41,59,0.6);border-radius:12px}
+    ::-webkit-scrollbar-thumb{
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      border-radius:12px;border:2px solid rgba(30,41,59,0.6);
+    }
+    ::-webkit-scrollbar-thumb:hover{
+      background:linear-gradient(135deg,var(--secondary),var(--accent));
+    }
+  </style>
+</head>
+<body>
+  <!-- ============================================================
+       PAGE BODY & MAIN APPLICATION CONTAINERS
+       ============================================================
+       Command: Create main containers for particle effects, app root,
+       and notification display area.
+  ============================================================ -->
+  
+  <!-- Command: Animated background particles container -->
+  <div class="particles" id="particles"></div>
+  
+  <!-- Command: Hamburger menu toggle (appears on mobile/when sidebar hidden) -->
+  <div class="menu-toggle hidden" id="menuToggle">
+    <i class="fas fa-bars"></i>
+  </div>
+  
+  <!-- Command: Main application root element where all content renders -->
+  <div id="app"></div>
+  
+  <!-- Command: Container for toast notifications -->
+  <div id="notifications"></div>
+
+  <!-- ============================================================
+       JAVASCRIPT APPLICATION LOGIC
+       ============================================================
+       Command: Core application functionality including authentication,
+       chat, state management, and UI rendering.
+  ============================================================ -->
+  <script>
+    /* ================== API CONFIGURATION ================== */
+    /* Command: Backend API endpoint for all HTTP requests */
+    const API_BASE = 'http://127.0.0.1:8000';
+    
+    /* ================== APPLICATION STATE ================== */
+    /* Command: Global application state object tracking user, messages, and UI state */
+    const appState = {
+      currentView: 'login',              /* Command: Current active view (login/dashboard) */
+      currentTab: 'login',               /* Command: Active tab in login page (login/signup) */
+      user: null,                        /* Command: Current logged-in user object */
+      messages: [],                      /* Command: Chat message history */
+      stats: {
+        queries: 0,                      /* Command: Total API queries made */
+        sessions: 1,                     /* Command: Active session count */
+        accuracy: 99.9,                  /* Command: AI accuracy percentage */
+        uptime: 100                      /* Command: System uptime percentage */
+      },
+      captcha: null,                     /* Command: Current CAPTCHA image data */
+      captchaId: null,                   /* Command: Current CAPTCHA session ID */
+      sidebarOpen: true,                 /* Command: Sidebar visibility state */
+      sessionId: null                    /* Command: User session identifier */
+    };
+
+    /* ================== NOTIFICATION SYSTEM ================== */
+    /* Command: Display temporary toast notifications to user */
+    function showNotification(message, type = 'success') {
+      const container = document.getElementById('notifications');
+      const notif = document.createElement('div');
+      notif.className = `notification ${type}`;
+      notif.innerHTML = `
+        <div style="display:flex;align-items:center;gap:12px">
+          <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}" 
+             style="font-size:1.5rem;color:${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#f59e0b'}"></i>
+          <span style="font-weight:600">${message}</span>
+        </div>
+      `;
+      container.appendChild(notif);
+      
+      /* Command: Auto-dismiss notification after 4 seconds */
+      setTimeout(() => {
+        notif.style.animation = 'notifSlideIn 0.6s reverse';
+        setTimeout(() => notif.remove(), 600);
+      }, 4000);
+    }
+
+    /* ================== INPUT SANITIZATION ================== */
+    /* Command: Escape HTML in user input to prevent XSS attacks */
+    function sanitizeInput(input) {
+      const div = document.createElement('div');
+      div.textContent = input;
+      return div.innerHTML;
+    }
+
+    /* ================== PARTICLE EFFECT INITIALIZATION ================== */
+    /* Command: Create animated background particles for visual appeal */
+    function initParticles() {
+      const container = document.getElementById('particles');
+      container.innerHTML = '';
+      /* Command: Generate 60 floating particles */
+      for(let i = 0; i < 60; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.style.left = Math.random() * 100 + '%';
+        p.style.top = Math.random() * 100 + '%';
+        p.style.animationDelay = Math.random() * 10 + 's';
+        p.style.animationDuration = (10 + Math.random() * 5) + 's';
+        container.appendChild(p);
+      }
+    }
+
+    /* ================== CAPTCHA MANAGEMENT ================== */
+    /* Command: Fetch new CAPTCHA image from backend for security verification */
+    async function fetchCaptcha() {
+      try {
+        const response = await fetch(`${API_BASE}/captcha`);
+        const data = await response.json();
+        appState.captcha = data.image;        /* Command: Store CAPTCHA image */
+        appState.captchaId = data.id;         /* Command: Store CAPTCHA session ID */
+        return data.image;
+      } catch(e) {
+        console.error('Captcha fetch error:', e);
+        showNotification('Backend not connected. Make sure Python server is running!', 'error');
+        return null;
+      }
+    }
+
+    /* ================== LOGIN VIEW RENDERING ================== */
+    /* Command: Render login and signup forms */
+    function renderLogin() {
+      return `
+        <div class="login-container">
+          <div class="login-box glass">
+            <!-- Command: Main title with gradient text -->
+            <h1 class="title">VISION</h1>
+            <p class="subtitle">Ultra Advanced AI v10.0</p>
+            
+            <!-- Command: Tab navigation between login and signup -->
+            <div class="tabs">
+              <div class="tab ${appState.currentTab === 'login' ? 'active' : ''}" onclick="switchTab('login')">
+                <i class="fas fa-sign-in-alt"></i> Login
+              </div>
+              <div class="tab ${appState.currentTab === 'signup' ? 'active' : ''}" onclick="switchTab('signup')">
+                <i class="fas fa-user-plus"></i> Sign Up
+              </div>
+            </div>
+            
+            <!-- Command: Login form (shown when login tab active) -->
+            <div id="loginForm" class="${appState.currentTab === 'login' ? '' : 'hidden'}">
+              <div class="input-group">
+                <input type="text" id="loginUsername" class="input-box" placeholder="👤 Username" required>
+              </div>
+              <div class="input-group">
+                <input type="password" id="loginPassword" class="input-box" placeholder="🔒 Password" required>
+              </div>
+              
+              <!-- Command: CAPTCHA image display and refresh -->
+              <div class="captcha-container">
+                <img id="loginCaptchaImg" src="data:image/png;base64,${appState.captcha || ''}" class="captcha-img" alt="CAPTCHA">
+                <button onclick="refreshCaptcha()" class="btn-gradient btn-refresh">
+                  <i class="fas fa-sync-alt"></i> Refresh CAPTCHA
+                </button>
+              </div>
+              
+              <!-- Command: CAPTCHA input field -->
+              <div class="input-group">
+                <input type="text" id="loginCaptcha" class="input-box" placeholder="🔐 Enter CAPTCHA" required>
+              </div>
+              
+              <!-- Command: Submit login form -->
+              <button onclick="handleLogin()" class="btn-gradient">
+                <i class="fas fa-rocket"></i> Launch Jarvis
+              </button>
+              
+              <!-- Command: Link to signup form -->
+              <p style="text-align:center;margin-top:20px">
+                <span class="link" onclick="switchTab('signup')">Create new account</span>
+              </p>
+            </div>
+            
+            <!-- Command: Signup form (shown when signup tab active) -->
+            <div id="signupForm" class="${appState.currentTab === 'signup' ? '' : 'hidden'}">
+              <div class="input-group">
+                <input type="text" id="signupUsername" class="input-box" placeholder="👤 Username" required>
+              </div>
+              <div class="input-group">
+                <input type="password" id="signupPassword" class="input-box" placeholder="🔒 Password (min 6 chars)" required>
+              </div>
+              
+              <!-- Command: CAPTCHA for signup -->
+              <div class="captcha-container">
+                <img id="signupCaptchaImg" src="data:image/png;base64,${appState.captcha || ''}" class="captcha-img" alt="CAPTCHA">
+                <button onclick="refreshCaptcha()" class="btn-gradient btn-refresh">
+                  <i class="fas fa-sync-alt"></i> Refresh CAPTCHA
+                </button>
+              </div>
+              
+              <div class="input-group">
+                <input type="text" id="signupCaptcha" class="input-box" placeholder="🔐 Enter CAPTCHA" required>
+              </div>
+              
+              <!-- Command: Submit signup form -->
+              <button onclick="handleSignup()" class="btn-gradient">
+                <i class="fas fa-user-plus"></i> Create Account
+              </button>
+              
+              <!-- Command: Link back to login -->
+              <p style="text-align:center;margin-top:20px">
+                <span class="link" onclick="switchTab('login')">Already have an account?</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    /* ================== DASHBOARD VIEW RENDERING ================== */
+    /* Command: Render main dashboard with sidebar and content area */
+    function renderDashboard() {
+      return `
+        <!-- Command: Sidebar navigation menu -->
+        <div class="sidebar ${appState.sidebarOpen ? '' : 'hidden'}" id="sidebar">
+          <div style="text-align:center;margin-bottom:40px">
+            <h2 class="gradient-text" style="font-size:2.5rem;margin-bottom:10px">VISION</h2>
+            <p style="color:#94a3b8;font-size:0.95rem">Ultra Advanced AI v10.0</p>
+          </div>
+          
+          <!-- Command: Dashboard navigation link -->
+          <div class="nav-item active" onclick="showView('dashboard')">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+          </div>
+          
+          <!-- Command: AI Chat navigation link -->
+          <div class="nav-item" onclick="showView('chat')">
+            <i class="fas fa-comments"></i>
+            <span>AI Chat</span>
+          </div>
+          
+          <!-- Command: Problem Solver navigation link -->
+          <div class="nav-item" onclick="showView('solver')">
+            <i class="fas fa-calculator"></i>
+            <span>Problem Solver</span>
+          </div>
+          
+          <!-- Command: Applications navigation link -->
+          <div class="nav-item" onclick="showView('apps')">
+            <i class="fas fa-th"></i>
+            <span>Applications</span>
+          </div>
+          
+          <!-- Command: Task Automation navigation link -->
+          <div class="nav-item" onclick="showView('automation')">
+            <i class="fas fa-robot"></i>
+            <span>Automation</span>
+          </div>
+          
+          <!-- Command: Logout button (styled differently at bottom) -->
+          <div class="nav-item" onclick="handleLogout()" style="margin-top:auto;background:rgba(239,68,68,0.2);border-left-color:#ef4444">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+          </div>
+        </div>
+        
+        <!-- Command: Main content area -->
+        <div class="main-content ${appState.sidebarOpen ? '' : 'full-width'}">
+          <!-- Command: Welcome header with username and clock -->
+          <div style="margin-bottom:40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px">
+            <div>
+              <h1 class="gradient-text" style="font-size:3rem;margin-bottom:8px">Welcome, ${appState.user?.name || 'User'}!</h1>
+              <p style="color:#94a3b8;font-size:1.2rem">Your AI-powered command center</p>
+            </div>
+            <!-- Command: Live clock display -->
+            <div style="display:flex;gap:12px">
+              <div style="background:rgba(0,212,255,0.2);padding:12px 24px;border-radius:16px;border:2px solid var(--primary)">
+                <i class="fas fa-clock" style="color:var(--primary);margin-right:8px"></i>
+                <span id="currentTime" style="font-weight:700">--:--:--</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Command: Statistics cards grid -->
+          <div class="stat-grid">
+            <!-- Command: Total queries stat card -->
+            <div class="stat-card">
+              <div class="stat-value" id="statQueries"><i class="fas fa-search"></i> ${appState.stats.queries}</div>
+              <div class="stat-label">Total Queries</div>
+            </div>
+            <!-- Command: Active sessions stat card -->
+            <div class="stat-card">
+              <div class="stat-value"><i class="fas fa-bolt"></i> ${appState.stats.sessions}</div>
+              <div class="stat-label">Active Sessions</div>
+            </div>
+            <!-- Command: Accuracy stat card -->
+            <div class="stat-card">
+              <div class="stat-value"><i class="fas fa-chart-line"></i> ${appState.stats.accuracy}%</div>
+              <div class="stat-label">Accuracy Rate</div>
+            </div>
+            <!-- Command: System uptime stat card -->
+            <div class="stat-card">
+              <div class="stat-value"><i class="fas fa-server"></i> ${appState.stats.uptime}%</div>
+              <div class="stat-label">System Uptime</div>
+            </div>
+          </div>
+          
+          <!-- Command: Dynamic content area (populated by showView function) -->
+          <div id="dynamicContent"></div>
+        </div>
+      `;
+    }
+
+    /* ================== CHAT VIEW RENDERING ================== */
+    /* Command: Render AI chat interface with message history and input controls */
+    function renderChatView() {
+      return `
+        <div class="glass">
+          <!-- Command: Chat interface header -->
+          <h2 class="gradient-text" style="font-size:2rem;margin-bottom:24px">
+            <i class="fas fa-robot"></i> AI Chat Assistant
+          </h2>
+          
+          <!-- Command: Quick action buttons for common prompts -->
+          <div style="margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap">
+            <button class="feature-btn" onclick="quickPrompt('Generate image of a futuristic city')">
+              <i class="fas fa-image"></i> Generate Image
+            </button>
+            <button class="feature-btn" onclick="quickPrompt('Generate meme about coding')">
+              <i class="fas fa-laugh"></i> Generate Meme
+            </button>
+            <button class="feature-btn" onclick="quickPrompt('Realtime search: Latest AI news')">
+              <i class="fas fa-search"></i> Web Search
+            </button>
+            <button class="feature-btn" onclick="quickPrompt('Debug code: python: print(Hello World)')">
+              <i class="fas fa-bug"></i> Debug Code
+            </button>
+          </div>
+          
+          <!-- Command: Chat message display area with scrolling -->
+          <div class="chat-container" id="chatContainer">
+            ${appState.messages.length === 0 ? `
+              <!-- Command: Welcome message when no messages -->
+              <div class="sys-msg">
+                <i class="fas fa-info-circle"></i> Start chatting with Vision AI - I can solve math, code, generate images & more!
+              </div>
+            ` : appState.messages.map(msg => `
+              <!-- Command: Individual message display -->
+              <div class="chat-msg ${msg.type}-msg" style="position:relative">
+                ${msg.type === 'ai' && msg.loading ? `
+                  <!-- Command: Show typing indicator while AI responds -->
+                  <div class="typing-indicator">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                  </div>
+                ` : msg.image ? `
+                  <!-- Command: Display generated image from AI -->
+                  <img src="${msg.image}" class="generated-image" alt="Generated">
+                  <p style="margin-top:12px">${sanitizeInput(msg.text)}</p>
+                ` : sanitizeInput(msg.text)}
+                
+                ${msg.type === 'ai' && !msg.loading ? `
+                  <!-- Command: Text-to-speech button for AI responses -->
+                  <button onclick="speakText('${encodeURIComponent(msg.text)}')" class="speak-btn">
+                    <i class="fas fa-volume-up"></i> Listen
+                  </button>
+                ` : ''}
+              </div>
+            `).join('')}
+          </div>
+          
+          <!-- Command: Chat input controls wrapper -->
+          <div class="input-wrapper">
+            <!-- Command: Attachment menu toggle button -->
+            <button onclick="toggleAttachMenu(event)" class="attach-btn">
+              <i class="fas fa-plus"></i>
+            </button>
+            
+            <!-- Command: Chat message input field -->
+            <input type="text" id="chatInput" class="input-box" 
+                   placeholder="💬 Ask me anything... Math, Code, Images, Search..." 
+                   style="flex:1;margin:0"
+                   onkeypress="handleChatKeypress(event)">
+            
+            <!-- Command: Voice input button -->
+            <button onclick="startVoiceInput()" class="voice-btn">
+              <i class="fas fa-microphone"></i>
+            </button>
+            
+            <!-- Command: Send message button -->
+            <button class="send-btn" onclick="sendMessage()">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+
+            <!-- Command: Hidden file input for attachments -->
+            <input type="file" id="chatFileInput" hidden accept="image/*,application/pdf,.doc,.docx,.txt,.md">
+
+            <!-- Command: Attachment options menu (dropdown) -->
+            <div id="attachMenu" class="attach-menu hidden">
+              <div onclick="handleAddPhotosFiles()">
+                <i class="fas fa-paperclip"></i>
+                <span>Add photos & files</span>
+              </div>
+              <div onclick="handleCreateImage()">
+                <i class="fas fa-image"></i>
+                <span>Create image</span>
+              </div>
+              <div onclick="handleThinkingMode()">
+                <i class="fas fa-lightbulb"></i>
+                <span>Thinking</span>
+              </div>
+              <div onclick="handleDeepResearch()">
+                <i class="fas fa-bullhorn"></i>
+                <span>Deep research</span>
+              </div>
+              <div onclick="handleTakePhoto()" style="border-top:1px solid rgba(148,163,184,0.2);">
+                <i class="fas fa-camera"></i>
+                <span>Take photo</span>
+              </div>
+              <div onclick="handleMoreOptions()" style="border-top:1px solid rgba(148,163,184,0.2);">
+                <i class="fas fa-ellipsis-h"></i>
+                <span>More</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    /* ================== ATTACH MENU CONTROL FUNCTIONS ================== */
+    /* Command: Toggle visibility of attachment options menu */
+    function toggleAttachMenu(e) {
+      e.stopImmediatePropagation();
+      const menu = document.getElementById('attachMenu');
+      if (!menu) return;
+      menu.classList.toggle('hidden');
+    }
+
+    /* Command: Close attachment menu */
+    function closeAttachMenu() {
+      const menu = document.getElementById('attachMenu');
+      if (menu) menu.classList.add('hidden');
+    }
+
+    /* Command: Trigger file upload dialog */
+    function handleAddPhotosFiles() {
+      closeAttachMenu();
+      document.getElementById('chatFileInput').click();
+    }
+
+    /* Command: Trigger camera for photo capture */
+    function handleTakePhoto() {
+      closeAttachMenu();
+      const fileInput = document.getElementById('chatFileInput');
+      fileInput.setAttribute('capture', 'environment');
+      fileInput.accept = 'image/*';
+      fileInput.click();
+    }
+
+    /* Command: Start image generation prompt */
+    function handleCreateImage() {
+      closeAttachMenu();
+      quickPrompt('Create image: ');
+    }
+
+    /* Command: Enable thinking/reasoning mode */
+    function handleThinkingMode() {
+      closeAttachMenu();
+      const input = document.getElementById('chatInput');
+      if (input) input.value = 'Think step-by-step: ';
+      showNotification('🧠 Thinking mode enabled!', 'success');
+    }
+
+    /* Command: Enable deep research mode */
+    function handleDeepResearch() {
+      closeAttachMenu();
+      const input = document.getElementById('chatInput');
+      if (input) input.value = 'Deep research on: ';
+      showNotification('🔍 Deep research mode enabled!', 'success');
+    }
+
+    /* Command: Show coming soon message for more options */
+    function handleMoreOptions() {
+      closeAttachMenu();
+      showNotification('🔧 More options coming in next update!', 'success');
+    }
+
+    /* ================== FILE UPLOAD HANDLER ================== */
+    /* Command: Process uploaded files and add to chat */
+    function handleFileUpload(e) {
+      const files = Array.from(e.target.files || []);
+      if (!files.length) return;
+
+      files.forEach(file => {
+        if (file.type.startsWith('image/')) {
+          /* Command: Handle image files - read as data URL */
+          const reader = new FileReader();
+          reader.onload = (ev) => {
+            appState.messages.push({
+              type: 'user',
+              text: `📸 Attached photo: ${file.name}`,
+              image: ev.target.result
+            });
+            showView('chat');
+            scrollToBottom();
+          };
+          reader.readAsDataURL(file);
+        } else {
+          /* Command: Handle non-image files - show file info */
+          appState.messages.push({
+            type: 'user',
+            text: `📎 Attached file: ${file.name} (${(file.size / 1024).toFixed(1)} KB)`
+          });
+          showView('chat');
+          scrollToBottom();
+        }
+      });
+      e.target.value = '';
+      showNotification(`${files.length} file(s) attached successfully!`, 'success');
+    }
+
+    /* ================== VOICE INPUT HANDLER ================== */
+    /* Command: Start voice-to-text transcription using Web Speech API */
+    function startVoiceInput() {
+      const input = document.getElementById('chatInput');
+      if (!input) return;
+
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        showNotification('Speech-to-text is not supported in this browser', 'warning');
+        return;
+      }
+
+      const recognition = new SpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.lang = 'en-US';
+
+      /* Command: Handle successful voice transcription */
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        input.value = transcript;
+        showNotification('✅ Voice transcribed!', 'success');
+        /* Command: Auto-send message after slight delay */
+        setTimeout(() => {
+          if (input.value.trim()) sendMessage();
+        }, 800);
+      };
+
+      /* Command: Handle voice recognition errors */
+      recognition.onerror = (event) => {
+        console.error(event);
+        showNotification('Voice input failed: ' + event.error, 'error');
+      };
+
+      recognition.start();
+      showNotification('🎤 Listening… Speak now!', 'success');
+    }
+
+    /* ================== TEXT-TO-SPEECH HANDLER ================== */
+    /* Command: Convert AI response text to speech using Web Speech API */
+    function speakText(encodedText) {
+      const text = decodeURIComponent(encodedText);
+      if (!('speechSynthesis' in window)) {
+        showNotification('Text-to-speech not supported in this browser', 'warning');
+        return;
+      }
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US';
+      utterance.pitch = 1;
+      utterance.rate = 1.05;
+      speechSynthesis.speak(utterance);
+    }
+
+    /* ================== TAB SWITCHING ================== */
+    /* Command: Switch between login and signup tabs */
+    async function switchTab(tab) {
+      appState.currentTab = tab;
+      await fetchCaptcha();
+      render();
+    }
+
+    /* ================== CAPTCHA REFRESH ================== */
+    /* Command: Get new CAPTCHA image and update display */
+    async function refreshCaptcha() {
+      const img = await fetchCaptcha();
+      if(img) {
+        const loginImg = document.getElementById('loginCaptchaImg');
+        const signupImg = document.getElementById('signupCaptchaImg');
+        if(loginImg) loginImg.src = `data:image/png;base64,${img}`;
+        if(signupImg) signupImg.src = `data:image/png;base64,${img}`;
+        showNotification('CAPTCHA refreshed!', 'success');
+      }
+    }
+
+    /* ================== LOGIN HANDLER ================== */
+    /* Command: Process user login request */
+    async function handleLogin() {
+      try {
+        const username = document.getElementById('loginUsername')?.value.trim();
+        const password = document.getElementById('loginPassword')?.value;
+        const captcha = document.getElementById('loginCaptcha')?.value;
+        
+        /* Command: Validate all fields are filled */
+        if (!username || !password || !captcha) {
+          showNotification('Please fill in all fields', 'error');
+          return;
+        }
+        
+        /* Command: Send login request to backend */
+        const response = await fetch(`${API_BASE}/login`, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            username,
+            password,
+            captcha,
+            captcha_id: appState.captchaId
+          })
+        });
+        
+        const data = await response.json();
+        
+        /* Command: Handle successful login */
+        if(data.success) {
+          appState.user = {name: username};
+          appState.sessionId = data.session_id;
+          appState.currentView = 'dashboard';
+          appState.stats.sessions++;
+          showNotification(data.message, 'success');
+          render();
+        } else {
+          /* Command: Handle login failure and refresh CAPTCHA */
+          showNotification(data.message, 'error');
+          await refreshCaptcha();
+        }
+      } catch (error) {
+        console.error('Login error:', error);
+        showNotification('⚠️ Backend not running! Start: python backend.py', 'error');
+      }
+    }
+
+    /* ================== SIGNUP HANDLER ================== */
+    /* Command: Process new user registration */
+    async function handleSignup() {
+      try {
+        const username = document.getElementById('signupUsername')?.value.trim();
+        const password = document.getElementById('signupPassword')?.value;
+        const captcha = document.getElementById('signupCaptcha')?.value;
+        
+        /* Command: Validate all fields are filled */
+        if (!username || !password || !captcha) {
+          showNotification('Please fill in all fields', 'error');
+          return;
+        }
+        
+        /* Command: Validate username length */
+        if(username.length < 3) {
+          showNotification('Username must be at least 3 characters', 'error');
+          return;
+        }
+        
+        /* Command: Validate password length */
+        if(password.length < 6) {
+          showNotification('Password must be at least 6 characters', 'error');
+          return;
+        }
+        
+        /* Command: Send signup request to backend */
+        const response = await fetch(`${API_BASE}/register`, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            username,
+            password,
+            captcha,
+            captcha_id: appState.captchaId
+          })
+        });
+        
+        const data = await response.json();
+        
+        /* Command: Handle successful signup */
+        if(data.success) {
+          showNotification(data.message, 'success');
+          appState.currentTab = 'login';
+          await fetchCaptcha();
+          render();
+        } else {
+          /* Command: Handle signup failure */
+          showNotification(data.message, 'error');
+          await refreshCaptcha();
+        }
+      } catch (error) {
+        console.error('Signup error:', error);
+        showNotification('⚠️ Backend not running! Start: python backend.py', 'error');
+      }
+    }
+
+    /* ================== LOGOUT HANDLER ================== */
+    /* Command: Handle user logout and cleanup session */
+    async function handleLogout() {
+      if (confirm('Are you sure you want to logout?')) {
+        try {
+          /* Command: Notify backend of logout */
+          await fetch(`${API_BASE}/logout?session_id=${appState.sessionId}`, {method: 'POST'});
+        } catch(e) {}
+        
+        /* Command: Clear user data and reset state */
+        appState.user = null;
+        appState.sessionId = null;
+        appState.currentView = 'login';
+        appState.currentTab = 'login';
+        appState.messages = [];
+        showNotification('Logged out successfully', 'success');
+        render();
+      }
+    }
+
+    /* ================== VIEW SWITCHING ================== */
+    /* Command: Switch active view/page in dashboard */
+    function showView(view) {
+      /* Command: Remove active state from all nav items */
+      document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+      if(event && event.target) {
+        event.target.closest('.nav-item')?.classList.add('active');
+      }
+      
+      const content = document.getElementById('dynamicContent');
+      if (!content) return;
+      
+      /* Command: Render appropriate view based on parameter */
+      switch(view) {
+        case 'chat':
+          content.innerHTML = renderChatView();
+          
+          /* Command: Attach file upload handler to input */
+          const fileInput = document.getElementById('chatFileInput');
+          if (fileInput) {
+            fileInput.addEventListener('change', handleFileUpload);
+          }
+          
+          scrollToBottom();
+          break;
+        case 'solver':
+          content.innerHTML = renderSolverView();
+          break;
+        case 'apps':
+          content.innerHTML = renderAppsView();
+          break;
+        case 'automation':
+          content.innerHTML = renderAutomationView();
+          break;
+        default:
+          /* Command: Default dashboard overview content */
+          content.innerHTML = '<div class="glass"><h2 class="gradient-text" style="font-size:2rem;margin-bottom:16px"><i class="fas fa-rocket"></i> Dashboard Overview</h2><p style="color:#94a3b8;font-size:1.2rem;line-height:1.8">Welcome to Vision AI - Your ultra-advanced AI assistant. I can solve complex math, debug code, generate images, automate tasks, and much more!</p><div style="margin-top:30px;padding:24px;background:rgba(0,212,255,0.1);border-radius:20px;border:2px solid var(--primary)"><h3 style="color:var(--primary);margin-bottom:12px"><i class="fas fa-lightbulb"></i> Features</h3><ul style="color:#cbd5e1;line-height:2"><li>✓ AI Chat with Groq LLaMA 3.3</li><li>✓ Math & Code Problem Solver</li><li>✓ Image & Meme Generation</li><li>✓ Real-time Web Search</li><li>✓ Task Automation</li><li>✓ 25+ Apps Integration</li></ul></div></div>';
+      }
+    }
+
+    /* ================== MESSAGE SENDING ================== */
+    /* Command: Send chat message to AI backend and display response */
+    async function sendMessage() {
+      try {
+        const input = document.getElementById('chatInput');
+        if (!input) return;
+        
+        const message = input.value.trim();
+        /* Command: Validate message is not empty */
+        if (!message) {
+          showNotification('Please enter a message', 'warning');
+          return;
+        }
+        
+        /* Command: Add user message to chat history */
+        appState.messages.push({ type: 'user', text: message });
+        appState.stats.queries++;
+        input.value = '';
+        
+        /* Command: Add loading indicator for AI response */
+        appState.messages.push({ type: 'ai', text: '', loading: true });
+        showView('chat');
+        scrollToBottom();
+        
+        /* Command: Send message to backend API */
+        const response = await fetch(`${API_BASE}/chat`, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            text: message,
+            user: appState.user.name,
+            session_id: appState.sessionId
+          })
+        });
+        
+        const data = await response.json();
+        
+        /* Command: Remove loading indicator */
+        appState.messages.pop();
+        
+        /* Command: Handle different response types (text, image, meme) */
+        if(data.error) {
+          appState.messages.push({ type: 'ai', text: data.response });
+        } else if(data.image) {
+          appState.messages.push({ type: 'ai', text: data.response, image: data.image });
+        } else if(data.meme) {
+          appState.messages.push({ type: 'ai', text: data.response, image: data.meme });
+        } else {
+          appState.messages.push({ type: 'ai', text: data.response });
+        }
+        
+        showView('chat');
+        scrollToBottom();
+        
+        /* Command: Update query counter in UI */
+        const statEl = document.getElementById('statQueries');
+        if(statEl) {
+          statEl.innerHTML = `<i class="fas fa-search"></i> ${appState.stats.queries}`;
+        }
+        
+      } catch (error) {
+        /* Command: Handle backend connection error */
+        appState.messages.pop();
+        appState.messages.push({ type: 'ai', text: '❌ Error: Backend not connected. Make sure Python server is running on port 8000!' });
+        showView('chat');
+        console.error('Send message error:', error);
+      }
+    }
+
+    /* ================== CHAT INPUT KEYBOARD HANDLING ================== */
+    /* Command: Send message on Enter key (without Shift) */
+    function handleChatKeypress(event) {
+      if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault();
+        sendMessage();
+      }
+    }
+
+    /* ================== QUICK PROMPT HELPER ================== */
+    /* Command: Fill input with preset prompt and send */
+    function quickPrompt(prompt) {
+      const input = document.getElementById('chatInput');
+      if (input) {
+        input.value = prompt;
+        input.focus();
+        sendMessage();
+      }
+    }
+
+    /* ================== PROBLEM SOLVER VIEW ================== */
+    /* Command: Set focus on solver input with appropriate placeholder */
+    function quickSolve(type) {
+      const input = document.getElementById('solverInput');
+      if(input) {
+        input.placeholder = `Enter your ${type} problem here...`;
+        input.focus();
+      }
+    }
+
+    /* Command: Render problem solver interface */
+    function renderSolverView() {
+      return `
+        <div class="glass">
+          <h2 class="gradient-text" style="font-size:2rem;margin-bottom:24px">
+            <i class="fas fa-calculator"></i> Problem Solver
+          </h2>
+          <p style="color:#94a3b8;margin-bottom:30px;font-size:1.1rem">
+            Solve any Math, Physics, Chemistry, or Coding problem with 100% accuracy
+          </p>
+          
+          <!-- Command: Problem type selection cards -->
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-bottom:30px">
+            <!-- Command: Mathematics option -->
+            <div class="feature-btn" onclick="quickSolve('Math')">
+              <i class="fas fa-square-root-alt" style="font-size:2rem;margin-bottom:10px;display:block"></i>
+              <h3 style="color:var(--primary);margin-bottom:8px">Mathematics</h3>
+              <p style="color:#94a3b8;font-size:0.9rem">Algebra, Calculus, Statistics, etc.</p>
+            </div>
+            <!-- Command: Physics option -->
+            <div class="feature-btn" onclick="quickSolve('Physics')">
+              <i class="fas fa-atom" style="font-size:2rem;margin-bottom:10px;display:block"></i>
+              <h3 style="color:var(--primary);margin-bottom:8px">Physics</h3>
+              <p style="color:#94a3b8;font-size:0.9rem">Mechanics, Thermodynamics, etc.</p>
+            </div>
+            <!-- Command: Chemistry option -->
+            <div class="feature-btn" onclick="quickSolve('Chemistry')">
+              <i class="fas fa-flask" style="font-size:2rem;margin-bottom:10px;display:block"></i>
+              <h3 style="color:var(--primary);margin-bottom:8px">Chemistry</h3>
+              <p style="color:#94a3b8;font-size:0.9rem">Organic, Inorganic, etc.</p>
+            </div>
+            <!-- Command: Programming option -->
+            <div class="feature-btn" onclick="quickSolve('Code')">
+              <i class="fas fa-code" style="font-size:2rem;margin-bottom:10px;display:block"></i>
+              <h3 style="color:var(--primary);margin-bottom:8px">Programming</h3>
+              <p style="color:#94a3b8;font-size:0.9rem">Debug & Optimize Code</p>
+            </div>
+          </div>
+          
+          <!-- Command: Problem input textarea -->
+          <div class="input-group">
+            <textarea id="solverInput" class="input-box" placeholder="Enter your problem here..." 
+                      style="min-height:150px;resize:vertical"></textarea>
+          </div>
+          
+          <!-- Command: Solve button -->
+          <button onclick="solveProblem()" class="btn-gradient">
+            <i class="fas fa-magic"></i> Solve Problem
+          </button>
+          
+          <!-- Command: Results display area -->
+          <div id="solverResult" style="margin-top:30px"></div>
+        </div>
+      `;
+    }
+
+    /* ================== AUTOMATION VIEW ================== */
+    /* Command: Render task automation interface */
+    function renderAutomationView() {
+      return `
+        <div class="glass">
+          <h2 class="gradient-text" style="font-size:2rem;margin-bottom:24px">
+            <i class="fas fa-robot"></i> Task Automation
+          </h2>
+          
+          <div style="margin-bottom:30px">
+            <h3 style="color:var(--primary);margin-bottom:16px">Quick Actions</h3>
+            <!-- Command: Quick automation buttons grid -->
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+              <button class="feature-btn" onclick="automateTask('open facebook')">
+                <i class="fab fa-facebook"></i> Open Facebook
+              </button>
+              <button class="feature-btn" onclick="automateTask('open youtube')">
+                <i class="fab fa-youtube"></i> Open YouTube
+              </button>
+              <button class="feature-btn" onclick="automateTask('open gmail')">
+                <i class="fas fa-envelope"></i> Open Gmail
+              </button>
+              <button class="feature-btn" onclick="automateTask('open notepad')">
+                <i class="fas fa-file-alt"></i> Open Notepad
+              </button>
+              <button class="feature-btn" onclick="automateTask('volume up')">
+                <i class="fas fa-volume-up"></i> Volume Up
+              </button>
+              <button class="feature-btn" onclick="automateTask('volume down')">
+                <i class="fas fa-volume-down"></i> Volume Down
+              </button>
+            </div>
+          </div>
+          
+          <!-- Command: Custom automation input -->
+          <div class="input-group">
+            <textarea id="automationInput" class="input-box" 
+                      placeholder="Enter tasks separated by commas&#10;Example: open facebook, play song on youtube, volume up" 
+                      style="min-height:120px"></textarea>
+          </div>
+          
+          <!-- Command: Run automation button -->
+          <button onclick="runAutomation()" class="btn-gradient">
+            <i class="fas fa-play"></i> Run Automation
+          </button>
+          
+          <!-- Command: Results display area -->
+          <div id="automationResults" style="margin-top:30px"></div>
+        </div>
+      `;
+    }
+
+    /* ================== APPLICATIONS VIEW ================== */
+    /* Command: Render application launcher interface */
+    function renderAppsView() {
+      /* Command: Define available applications to launch */
+      const apps = [
+        {icon: 'fa-instagram', name: 'Instagram'},
+        {icon: 'fa-whatsapp', name: 'WhatsApp'},
+        {icon: 'fa-facebook', name: 'Facebook'},
+        {icon: 'fa-twitter', name: 'Twitter'},
+        {icon: 'fa-youtube', name: 'YouTube'},
+        {icon: 'fa-linkedin', name: 'LinkedIn'},
+        {icon: 'fa-spotify', name: 'Spotify'},
+        {icon: 'fa-github', name: 'GitHub'},
+        {icon: 'fa-reddit', name: 'Reddit'},
+        {icon: 'fa-discord', name: 'Discord'},
+        {icon: 'fa-telegram', name: 'Telegram'},
+        {icon: 'fa-tiktok', name: 'TikTok'},
+        {icon: 'fa-rocket', name: 'SpaceX'},
+        {icon: 'fa-amazon', name: 'Amazon'},
+        {icon: 'fa-google', name: 'Google'},
+        {icon: 'fa-apple', name: 'Apple'},
+        {icon: 'fa-microsoft', name: 'Microsoft'},
+        {icon: 'fa-netflix', name: 'Netflix'},
+        {icon: 'fa-twitch', name: 'Twitch'},
+        {icon: 'fa-dropbox', name: 'Dropbox'}
+      ];
+      
+      return `
+        <div class="glass">
+          <h2 class="gradient-text" style="font-size:2rem;margin-bottom:24px">
+            <i class="fas fa-th"></i> Application Hub
+          </h2>
+          <p style="color:#94a3b8;margin-bottom:30px;font-size:1.1rem">
+            Launch any application with a single click
+          </p>
+          
+          <!-- Command: App icon grid -->
+          <div class="app-grid">
+            ${apps.map(app => `
+              <div class="app-icon" onclick="launchApp('${app.name}')">
+                <i class="fab ${app.icon}"></i>
+                <span>${app.name}</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    /* ================== PROBLEM SOLVER LOGIC ================== */
+    /* Command: Submit problem and get solution from AI */
+    async function solveProblem() {
+      const input = document.getElementById('solverInput');
+      const result = document.getElementById('solverResult');
+      
+      /* Command: Validate problem input */
+      if(!input || !input.value.trim()) {
+        showNotification('Please enter a problem to solve', 'warning');
+        return;
+      }
+      
+      /* Command: Show loading state */
+      result.innerHTML = '<div style="text-align:center;padding:40px"><div class="typing-indicator" style="justify-content:center"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div><p style="margin-top:20px;color:#94a3b8">Solving your problem...</p></div>';
+      
+      try {
+        /* Command: Send problem to backend */
+        const response = await fetch(`${API_BASE}/chat`, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            text: `Solve this problem step-by-step with detailed explanation: ${input.value}`,
+            user: appState.user.name,
+            session_id: appState.sessionId
+          })
+        });
+        
+        const data = await response.json();
+        
+        /* Command: Display solution */
+        result.innerHTML = `
+          <div class="glass" style="background:rgba(0,212,255,0.1);border-color:var(--primary)">
+            <h3 style="color:var(--primary);margin-bottom:16px"><i class="fas fa-check-circle"></i> Solution</h3>
+            <div style="color:#cbd5e1;line-height:1.8;white-space:pre-wrap">${sanitizeInput(data.response)}</div>
+          </div>
+        `;
+        
+        appState.stats.queries++;
+      } catch(error) {
+        /* Command: Handle backend error */
+        result.innerHTML = `<div class="glass" style="border-color:var(--danger)"><p style="color:var(--danger)">❌ Error connecting to backend. Make sure Python server is running!</p></div>`;
+      }
+    }
+
+    /* ================== AUTOMATION LOGIC ================== */
+    /* Command: Execute automation tasks */
+    async function runAutomation() {
+      const input = document.getElementById('automationInput');
+      const results = document.getElementById('automationResults');
+      
+      /* Command: Validate automation input */
+      if(!input || !input.value.trim()) {
+        showNotification('Please enter automation tasks', 'warning');
+        return;
+      }
+      
+      /* Command: Show loading state */
+      results.innerHTML = '<div style="text-align:center;padding:40px"><div class="typing-indicator" style="justify-content:center"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div><p style="margin-top:20px;color:#94a3b8">Running automation...</p></div>';
+      
+      try {
+        /* Command: Send automation request to backend */
+        const response = await fetch(`${API_BASE}/chat`, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            text: `automate: ${input.value}`,
+            user: appState.user.name,
+            session_id: appState.sessionId
+          })
+        });
+        
+        const data = await response.json();
+        
+        /* Command: Display automation results */
+        if(data.tasks) {
+          results.innerHTML = `
+            <div class="glass">
+              <h3 style="color:var(--primary);margin-bottom:20px"><i class="fas fa-tasks"></i> Automation Results</h3>
+              ${data.tasks.map(task => `
+                <div style="padding:16px;background:rgba(30,41,59,0.8);border-radius:12px;margin-bottom:12px;border-left:4px solid var(--primary)">
+                  <div style="display:flex;justify-content:space-between;align-items:center">
+                    <strong style="color:#cbd5e1">${task.name}</strong>
+                    <span style="color:${task.progress === 100 ? 'var(--success)' : 'var(--warning)'}">${task.status}</span>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          `;
+        } else {
+          results.innerHTML = `<div class="glass"><p style="color:#cbd5e1">${data.response}</p></div>`;
+        }
+      } catch(error) {
+        /* Command: Handle backend error */
+        results.innerHTML = `<div class="glass" style="border-color:var(--danger)"><p style="color:var(--danger)">❌ Error connecting to backend</p></div>`;
+      }
+    }
+
+    /* ================== QUICK AUTOMATION EXECUTOR ================== */
+    /* Command: Execute single automation task immediately */
+    async function automateTask(task) {
+      showNotification(`Executing: ${task}`, 'success');
+      const input = document.getElementById('automationInput');
+      if(input) {
+        input.value = task;
+        await runAutomation();
+      }
+    }
+
+    /* ================== SCROLL TO BOTTOM ================== */
+    /* Command: Auto-scroll chat to show latest message */
+    function scrollToBottom() {
+      setTimeout(() => {
+        const container = document.getElementById('chatContainer');
+        if (container) {
+          container.scrollTop = container.scrollHeight;
+        }
+      }, 100);
+    }
+
+    /* ================== APPLICATION LAUNCHER ================== */
+    /* Command: Launch selected application via backend */
+    async function launchApp(appName) {
+      showNotification(`Launching ${appName}...`, 'success');
+      try {
+        await fetch(`${API_BASE}/chat`, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            text: `automate: open ${appName.toLowerCase()}`,
+            user: appState.user.name,
+            session_id: appState.sessionId
+          })
+        });
+        setTimeout(() => {
+          showNotification(`${appName} launched!`, 'success');
+        }, 1000);
+      } catch(e) {
+        showNotification(`Error launching ${appName}`, 'error');
+      }
+    }
+
+    /* ================== SIDEBAR TOGGLE ================== */
+    /* Command: Show/hide sidebar and adjust main content width */
+    function toggleSidebar() {
+      appState.sidebarOpen = !appState.sidebarOpen;
+      const sidebar = document.getElementById('sidebar');
+      const mainContent = document.querySelector('.main-content');
+      
+      if (sidebar && mainContent) {
+        sidebar.classList.toggle('hidden');
+        mainContent.classList.toggle('full-width');
+      }
+    }
+
+    /* ================== CLOCK UPDATE ================== */
+    /* Command: Update displayed time */
+    function updateClock() {
+      const clockElement = document.getElementById('currentTime');
+      if (clockElement) {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        clockElement.textContent = `${hours}:${minutes}:${seconds}`;
+      }
+    }
+
+    /* Command: Clock interval reference for cleanup */
+    let clockInterval = null;
+
+    /* ================== MAIN RENDER FUNCTION ================== */
+    /* Command: Render entire application based on current state */
+    async function render() {
+      const app = document.getElementById('app');
+      if (!app) return;
+      
+      try {
+        /* Command: Show login screen if not authenticated */
+        if (appState.currentView === 'login') {
+          if(!appState.captcha) {
+            await fetchCaptcha();
+          }
+          app.innerHTML = renderLogin();
+          document.getElementById('menuToggle')?.classList.add('hidden');
+          /* Command: Stop clock when on login page */
+          if(clockInterval) {
+            clearInterval(clockInterval);
+            clockInterval = null;
+          }
+        } else {
+          /* Command: Show dashboard when authenticated */
+          app.innerHTML = renderDashboard();
+          document.getElementById('menuToggle')?.classList.remove('hidden');
+          
+          /* Command: Start clock on dashboard */
+          if(!clockInterval) {
+            updateClock();
+            clockInterval = setInterval(updateClock, 1000);
+          }
+          
+          /* Command: Show default dashboard content */
+          const content = document.getElementById('dynamicContent');
+          if (content) {
+            content.innerHTML = '<div class="glass"><h2 class="gradient-text" style="font-size:2rem;margin-bottom:16px"><i class="fas fa-rocket"></i> Dashboard Overview</h2><p style="color:#94a3b8;font-size:1.2rem;line-height:1.8">Welcome to Vision AI - Your ultra-advanced AI assistant capable of solving complex problems, generating images, debugging code, and automating tasks with 100% accuracy!</p><div style="margin-top:30px;padding:24px;background:rgba(0,212,255,0.1);border-radius:20px;border:2px solid var(--primary)"><h3 style="color:var(--primary);margin-bottom:12px"><i class="fas fa-lightbulb"></i> Quick Start</h3><ul style="color:#cbd5e1;line-height:2"><li>💬 <strong>AI Chat</strong> - Ask any question</li><li>🔢 <strong>Problem Solver</strong> - Math, Physics, Chemistry</li><li>🎨 <strong>Image Generation</strong> - Create stunning visuals</li><li>🔍 <strong>Web Search</strong> - Real-time information</li><li>🤖 <strong>Automation</strong> - Control apps & system</li></ul></div></div>';
+          }
+        }
+      } catch (error) {
+        console.error('Render error:', error);
+        app.innerHTML = '<div class="glass" style="margin:20px;text-align:center"><h2 style="color:#ef4444">An error occurred</h2><p style="color:#94a3b8;margin-top:16px">Please refresh the page</p></div>';
+      }
+    }
+
+    /* ================== APPLICATION INITIALIZATION ================== */
+    /* Command: Initialize app on page load */
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        /* Command: Create animated background particles */
+        initParticles();
+        
+        /* Command: Render initial view */
+        await render();
+        
+        /* Command: Attach menu toggle event listener */
+        const menuToggle = document.getElementById('menuToggle');
+        if (menuToggle) {
+          menuToggle.addEventListener('click', toggleSidebar);
+        }
+        
+        /* Command: Close attach menu when clicking outside */
+        document.addEventListener('click', (e) => {
+          const menu = document.getElementById('attachMenu');
+          const attachBtn = e.target.closest('.attach-btn');
+          if (menu && !attachBtn && !menu.classList.contains('hidden')) {
+            menu.classList.add('hidden');
+          }
+        });
+        
+        /* Command: Ctrl+K keyboard shortcut to open chat */
+        document.addEventListener('keydown', (e) => {
+          if (e.ctrlKey && e.key === 'k') {
+            e.preventDefault();
+            if (appState.currentView !== 'login') {
+              showView('chat');
+            }
+          }
+        });
+        
+      } catch (error) {
+        console.error('Initialization error:', error);
+      }
+    });
+
+    /* ================== GLOBAL ERROR HANDLER ================== */
+    /* Command: Log any uncaught errors */
+    window.addEventListener('error', (e) => {
+      console.error('Global error:', e.error);
+    });
+  </script>
+</body>
+</html>

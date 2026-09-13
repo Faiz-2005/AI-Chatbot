@@ -1,0 +1,236 @@
+2026-04-15 20:58:00 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-04-15 20:58:00 - JarvisAI-v12-Integrated - INFO - [<module>] - JARVIS AI v12.0 INTEGRATED - STARTING
+2026-04-15 20:58:00 - JarvisAI-v12-Integrated - INFO - [<module>] - Real-Time Search: ENABLED
+2026-04-15 20:58:00 - JarvisAI-v12-Integrated - INFO - [<module>] - Chat Service: ENABLED
+2026-04-15 20:58:00 - JarvisAI-v12-Integrated - INFO - [<module>] - Conversation History: ENABLED
+2026-04-15 20:58:00 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-04-15 21:00:20 - JarvisAI-v12-Integrated - INFO - [save_users] - Users database saved
+2026-04-18 20:00:46 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-04-18 20:00:46 - JarvisAI-v12-Integrated - INFO - [<module>] - JARVIS AI v12.0 INTEGRATED - STARTING
+2026-04-18 20:00:46 - JarvisAI-v12-Integrated - INFO - [<module>] - Real-Time Search: ENABLED
+2026-04-18 20:00:46 - JarvisAI-v12-Integrated - INFO - [<module>] - Chat Service: ENABLED
+2026-04-18 20:00:46 - JarvisAI-v12-Integrated - INFO - [<module>] - Conversation History: ENABLED
+2026-04-18 20:00:46 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-04-18 20:10:12 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: write an application for two days leave
+2026-04-18 20:10:12 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: write an application for two days leave...
+2026-04-18 20:10:49 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: formula of triangle
+2026-04-18 20:10:49 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: formula of triangle...
+2026-04-18 20:11:24 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: today temprature
+2026-04-18 20:11:24 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: today temprature...
+2026-04-18 20:11:58 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: one doller in Indial rupeas
+2026-04-18 20:11:58 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: one doller in Indial rupeas...
+2026-04-18 20:13:19 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: Solve this problem step-by-step with detailed explanation: how to find area of the circle
+
+2026-04-18 20:13:19 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: Solve this problem step-by-step with detailed expl...
+2026-04-18 20:15:20 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: Solve this problem step-by-step with detailed explanation: Ram is a good boy 
+translate in hindi
+
+2026-04-18 20:15:20 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: Solve this problem step-by-step with detailed expl...
+2026-04-18 20:16:17 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: Solve this problem step-by-step with detailed explanation: chemical formula of water
+
+2026-04-18 20:16:17 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: Solve this problem step-by-step with detailed expl...
+2026-04-18 20:20:58 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: Generate image of a futuristic city
+2026-04-18 20:20:58 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: Generate image of a futuristic city...
+2026-04-18 20:21:09 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: Generate image of a futuristic city
+2026-04-18 20:21:09 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: Generate image of a futuristic city...
+2026-04-18 20:21:09 - JarvisAI-v12-Integrated - DEBUG - [google_search] - Cache hit for: Generate image of a futuristic city
+2026-04-18 20:21:16 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: Generate meme about coding
+2026-04-18 20:21:16 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: Generate meme about coding...
+2026-04-18 20:21:47 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: I am going to school
+2026-04-18 20:21:47 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: I am going to school...
+2026-04-25 11:27:51 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-04-25 11:27:51 - JarvisAI-v12-Integrated - INFO - [<module>] - JARVIS AI v12.0 INTEGRATED - STARTING
+2026-04-25 11:27:51 - JarvisAI-v12-Integrated - INFO - [<module>] - Real-Time Search: ENABLED
+2026-04-25 11:27:51 - JarvisAI-v12-Integrated - INFO - [<module>] - Chat Service: ENABLED
+2026-04-25 11:27:51 - JarvisAI-v12-Integrated - INFO - [<module>] - Conversation History: ENABLED
+2026-04-25 11:27:51 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-04-25 11:29:06 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: Generate meme about coding
+2026-04-25 11:29:06 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: Generate meme about coding...
+2026-04-25 11:29:17 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: LPU meams
+2026-04-25 11:29:17 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: LPU meams...
+2026-04-25 11:29:28 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: 2
+2026-04-25 11:29:28 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: 2...
+2026-04-25 11:29:55 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: batman
+2026-04-25 11:29:55 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: batman...
+2026-04-25 11:30:53 - JarvisAI-v12-Integrated - DEBUG - [add_task] - Added task_1daa4a8f: open whatsapp
+2026-04-25 11:30:54 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Processing batch: 1 tasks
+2026-04-25 11:30:54 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing app: open whatsapp
+2026-04-25 11:30:55 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Progress: 1/1
+2026-04-25 11:31:03 - JarvisAI-v12-Integrated - DEBUG - [add_task] - Added task_1a2411a9: open instagram
+2026-04-25 11:31:04 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Processing batch: 1 tasks
+2026-04-25 11:31:04 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing app: open instagram
+2026-04-25 11:31:05 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Progress: 1/1
+2026-04-25 11:31:11 - JarvisAI-v12-Integrated - DEBUG - [add_task] - Added task_8aa7279b: open linkedin
+2026-04-25 11:31:12 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Processing batch: 1 tasks
+2026-04-25 11:31:12 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing app: open linkedin
+2026-04-25 11:31:12 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Progress: 1/1
+2026-04-25 11:32:11 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: Solve this problem step-by-step with detailed explanation: give me a  code of fibnoacii series
+2026-04-25 11:32:11 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: Solve this problem step-by-step with detailed expl...
+2026-04-25 11:32:38 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: Solve this problem step-by-step with detailed explanation: give me a  code of fibnoacii series in c language
+2026-04-25 11:32:38 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: Solve this problem step-by-step with detailed expl...
+2026-04-25 11:33:21 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: Solve this problem step-by-step with detailed explanation: give me a code of multiple of 6 in java language
+2026-04-25 11:33:21 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: Solve this problem step-by-step with detailed expl...
+2026-04-25 11:34:01 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: Solve this problem step-by-step with detailed explanation: give me a formula of triangle
+2026-04-25 11:34:01 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: Solve this problem step-by-step with detailed expl...
+2026-04-29 13:17:20 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-04-29 13:17:20 - JarvisAI-v12-Integrated - INFO - [<module>] - JARVIS AI v12.0 INTEGRATED - STARTING
+2026-04-29 13:17:20 - JarvisAI-v12-Integrated - INFO - [<module>] - Real-Time Search: ENABLED
+2026-04-29 13:17:20 - JarvisAI-v12-Integrated - INFO - [<module>] - Chat Service: ENABLED
+2026-04-29 13:17:20 - JarvisAI-v12-Integrated - INFO - [<module>] - Conversation History: ENABLED
+2026-04-29 13:17:20 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-04-29 23:01:15 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-04-29 23:01:15 - JarvisAI-v12-Integrated - INFO - [<module>] - JARVIS AI v12.0 INTEGRATED - STARTING
+2026-04-29 23:01:15 - JarvisAI-v12-Integrated - INFO - [<module>] - Real-Time Search: ENABLED
+2026-04-29 23:01:15 - JarvisAI-v12-Integrated - INFO - [<module>] - Chat Service: ENABLED
+2026-04-29 23:01:15 - JarvisAI-v12-Integrated - INFO - [<module>] - Conversation History: ENABLED
+2026-04-29 23:01:15 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-04-29 23:16:14 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-04-29 23:16:14 - JarvisAI-v12-Integrated - INFO - [<module>] - JARVIS AI v12.0 INTEGRATED - STARTING
+2026-04-29 23:16:14 - JarvisAI-v12-Integrated - INFO - [<module>] - Real-Time Search: ENABLED
+2026-04-29 23:16:14 - JarvisAI-v12-Integrated - INFO - [<module>] - Chat Service: ENABLED
+2026-04-29 23:16:14 - JarvisAI-v12-Integrated - INFO - [<module>] - Conversation History: ENABLED
+2026-04-29 23:16:14 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-04-30 13:22:47 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-04-30 13:22:47 - JarvisAI-v12-Integrated - INFO - [<module>] - JARVIS AI v12.0 INTEGRATED - STARTING
+2026-04-30 13:22:47 - JarvisAI-v12-Integrated - INFO - [<module>] - Real-Time Search: ENABLED
+2026-04-30 13:22:47 - JarvisAI-v12-Integrated - INFO - [<module>] - Chat Service: ENABLED
+2026-04-30 13:22:47 - JarvisAI-v12-Integrated - INFO - [<module>] - Conversation History: ENABLED
+2026-04-30 13:22:47 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-04-30 16:23:58 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-04-30 16:23:58 - JarvisAI-v12-Integrated - INFO - [<module>] - JARVIS AI v12.0 INTEGRATED - STARTING
+2026-04-30 16:23:58 - JarvisAI-v12-Integrated - INFO - [<module>] - Real-Time Search: ENABLED
+2026-04-30 16:23:58 - JarvisAI-v12-Integrated - INFO - [<module>] - Chat Service: ENABLED
+2026-04-30 16:23:58 - JarvisAI-v12-Integrated - INFO - [<module>] - Conversation History: ENABLED
+2026-04-30 16:23:58 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-04-30 16:26:25 - JarvisAI-v12-Integrated - DEBUG - [add_task] - Added task_f665f13a: open instagram
+2026-04-30 16:26:25 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Processing batch: 1 tasks
+2026-04-30 16:26:25 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing app: open instagram
+2026-04-30 16:26:26 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Progress: 1/1
+2026-05-04 19:33:05 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-05-04 19:33:05 - JarvisAI-v12-Integrated - INFO - [<module>] - JARVIS AI v12.0 INTEGRATED - STARTING
+2026-05-04 19:33:05 - JarvisAI-v12-Integrated - INFO - [<module>] - Real-Time Search: ENABLED
+2026-05-04 19:33:05 - JarvisAI-v12-Integrated - INFO - [<module>] - Chat Service: ENABLED
+2026-05-04 19:33:05 - JarvisAI-v12-Integrated - INFO - [<module>] - Conversation History: ENABLED
+2026-05-04 19:33:05 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-05-04 20:04:33 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-05-04 20:04:33 - JarvisAI-v12-Integrated - INFO - [<module>] - JARVIS AI v12.0 INTEGRATED - STARTING
+2026-05-04 20:04:33 - JarvisAI-v12-Integrated - INFO - [<module>] - Real-Time Search: ENABLED
+2026-05-04 20:04:33 - JarvisAI-v12-Integrated - INFO - [<module>] - Chat Service: ENABLED
+2026-05-04 20:04:33 - JarvisAI-v12-Integrated - INFO - [<module>] - Conversation History: ENABLED
+2026-05-04 20:04:33 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-05-04 21:42:38 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-05-04 21:42:38 - JarvisAI-v12-Integrated - INFO - [<module>] - JARVIS AI v12.0 INTEGRATED - STARTING
+2026-05-04 21:42:38 - JarvisAI-v12-Integrated - INFO - [<module>] - Real-Time Search: ENABLED
+2026-05-04 21:42:38 - JarvisAI-v12-Integrated - INFO - [<module>] - Chat Service: ENABLED
+2026-05-04 21:42:38 - JarvisAI-v12-Integrated - INFO - [<module>] - Conversation History: ENABLED
+2026-05-04 21:42:38 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-05-04 21:45:50 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: Generate meme about coding
+2026-05-04 21:45:50 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: Generate meme about coding...
+2026-05-04 21:46:04 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: Generate image of a futuristic city
+2026-05-04 21:46:04 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: Generate image of a futuristic city...
+2026-05-05 10:18:13 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-05-05 10:18:13 - JarvisAI-v12-Integrated - INFO - [<module>] - JARVIS AI v12.0 INTEGRATED - STARTING
+2026-05-05 10:18:13 - JarvisAI-v12-Integrated - INFO - [<module>] - Real-Time Search: ENABLED
+2026-05-05 10:18:13 - JarvisAI-v12-Integrated - INFO - [<module>] - Chat Service: ENABLED
+2026-05-05 10:18:13 - JarvisAI-v12-Integrated - INFO - [<module>] - Conversation History: ENABLED
+2026-05-05 10:18:13 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-05-05 10:19:39 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: hello how are you
+2026-05-05 10:19:39 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: hello how are you...
+2026-05-05 10:22:09 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing app: open youtub
+2026-05-05 10:22:12 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: open youtub...
+2026-05-05 10:22:39 - JarvisAI-v12-Integrated - DEBUG - [add_task] - Added task_15ce65eb: open youtube
+2026-05-05 10:22:40 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Processing batch: 1 tasks
+2026-05-05 10:22:40 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing app: open youtube
+2026-05-05 10:22:41 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Progress: 1/1
+2026-05-05 10:22:50 - JarvisAI-v12-Integrated - DEBUG - [add_task] - Added task_9546e069: open gmail
+2026-05-05 10:22:50 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Processing batch: 1 tasks
+2026-05-05 10:22:50 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing app: open gmail
+2026-05-05 10:22:51 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Progress: 1/1
+2026-05-05 10:23:03 - JarvisAI-v12-Integrated - DEBUG - [add_task] - Added task_87d91027: open notepad
+2026-05-05 10:23:04 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Processing batch: 1 tasks
+2026-05-05 10:23:04 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing app: open notepad
+2026-05-05 10:23:04 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Progress: 1/1
+2026-05-05 10:23:17 - JarvisAI-v12-Integrated - DEBUG - [add_task] - Added task_fe8db628: volume down
+2026-05-05 10:23:18 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Processing batch: 1 tasks
+2026-05-05 10:23:18 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing media: volume down
+2026-05-05 10:23:18 - JarvisAI-v12-Integrated - ERROR - [volume_down] - Volume down failed: [WinError 2] The system cannot find the file specified
+2026-05-05 10:23:18 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Progress: 1/1
+2026-05-05 10:23:21 - JarvisAI-v12-Integrated - DEBUG - [add_task] - Added task_ec8c8a94: volume up
+2026-05-05 10:23:22 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Processing batch: 1 tasks
+2026-05-05 10:23:22 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing media: volume up
+2026-05-05 10:23:22 - JarvisAI-v12-Integrated - ERROR - [volume_up] - Volume up failed: [WinError 2] The system cannot find the file specified
+2026-05-05 10:23:22 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Progress: 1/1
+2026-05-05 10:50:50 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-05-05 10:50:50 - JarvisAI-v12-Integrated - INFO - [<module>] - JARVIS AI v12.0 INTEGRATED - STARTING
+2026-05-05 10:50:50 - JarvisAI-v12-Integrated - INFO - [<module>] - Real-Time Search: ENABLED
+2026-05-05 10:50:50 - JarvisAI-v12-Integrated - INFO - [<module>] - Chat Service: ENABLED
+2026-05-05 10:50:50 - JarvisAI-v12-Integrated - INFO - [<module>] - Conversation History: ENABLED
+2026-05-05 10:50:50 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-05-05 10:55:19 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-05-05 10:55:19 - JarvisAI-v12-Integrated - INFO - [<module>] - JARVIS AI v12.0 INTEGRATED - STARTING
+2026-05-05 10:55:19 - JarvisAI-v12-Integrated - INFO - [<module>] - Real-Time Search: ENABLED
+2026-05-05 10:55:19 - JarvisAI-v12-Integrated - INFO - [<module>] - Chat Service: ENABLED
+2026-05-05 10:55:19 - JarvisAI-v12-Integrated - INFO - [<module>] - Conversation History: ENABLED
+2026-05-05 10:55:19 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-05-06 12:30:32 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-05-06 12:30:32 - JarvisAI-v12-Integrated - INFO - [<module>] - JARVIS AI v12.0 INTEGRATED - STARTING
+2026-05-06 12:30:32 - JarvisAI-v12-Integrated - INFO - [<module>] - Real-Time Search: ENABLED
+2026-05-06 12:30:32 - JarvisAI-v12-Integrated - INFO - [<module>] - Chat Service: ENABLED
+2026-05-06 12:30:32 - JarvisAI-v12-Integrated - INFO - [<module>] - Conversation History: ENABLED
+2026-05-06 12:30:32 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-05-07 22:18:18 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-05-07 22:18:18 - JarvisAI-v12-Integrated - INFO - [<module>] - JARVIS AI v12.0 INTEGRATED - STARTING
+2026-05-07 22:18:18 - JarvisAI-v12-Integrated - INFO - [<module>] - Real-Time Search: ENABLED
+2026-05-07 22:18:18 - JarvisAI-v12-Integrated - INFO - [<module>] - Chat Service: ENABLED
+2026-05-07 22:18:18 - JarvisAI-v12-Integrated - INFO - [<module>] - Conversation History: ENABLED
+2026-05-07 22:18:18 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-05-08 16:12:14 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-05-08 16:12:14 - JarvisAI-v12-Integrated - INFO - [<module>] - JARVIS AI v12.0 INTEGRATED - STARTING
+2026-05-08 16:12:14 - JarvisAI-v12-Integrated - INFO - [<module>] - Real-Time Search: ENABLED
+2026-05-08 16:12:14 - JarvisAI-v12-Integrated - INFO - [<module>] - Chat Service: ENABLED
+2026-05-08 16:12:14 - JarvisAI-v12-Integrated - INFO - [<module>] - Conversation History: ENABLED
+2026-05-08 16:12:14 - JarvisAI-v12-Integrated - INFO - [<module>] - ================================================================================
+2026-05-08 16:13:31 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: Realtime search: Latest AI news
+2026-05-08 16:13:31 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: Realtime search: Latest AI news...
+2026-05-08 16:13:34 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: Generate meme about coding
+2026-05-08 16:13:34 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: Generate meme about coding...
+2026-05-08 16:13:43 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: Generate meme about coding
+2026-05-08 16:13:43 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: Generate meme about coding...
+2026-05-08 16:13:43 - JarvisAI-v12-Integrated - DEBUG - [google_search] - Cache hit for: Generate meme about coding
+2026-05-08 16:13:47 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: LPu
+2026-05-08 16:13:47 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: LPu...
+2026-05-08 16:14:06 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: 2
+2026-05-08 16:14:06 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: 2...
+2026-05-08 16:15:07 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: Realtime search: Latest AI news
+2026-05-08 16:15:07 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: Realtime search: Latest AI news...
+2026-05-08 16:15:07 - JarvisAI-v12-Integrated - DEBUG - [google_search] - Cache hit for: Realtime search: Latest AI news
+2026-05-08 16:15:10 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: Realtime search: Latest AI news
+2026-05-08 16:15:10 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: Realtime search: Latest AI news...
+2026-05-08 16:15:10 - JarvisAI-v12-Integrated - DEBUG - [google_search] - Cache hit for: Realtime search: Latest AI news
+2026-05-08 16:15:32 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: student
+2026-05-08 16:15:32 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: student...
+2026-05-08 16:16:11 - JarvisAI-v12-Integrated - DEBUG - [add_task] - Added task_c30d6ae7: open youtube
+2026-05-08 16:16:11 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Processing batch: 1 tasks
+2026-05-08 16:16:11 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing app: open youtube
+2026-05-08 16:16:12 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Progress: 1/1
+2026-05-08 16:17:23 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: Solve this problem step-by-step with detailed explanation: write a progam to multiple of matrices
+
+2026-05-08 16:17:23 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: Solve this problem step-by-step with detailed expl...
+2026-05-08 16:18:14 - JarvisAI-v12-Integrated - DEBUG - [add_task] - Added task_6b41ccfd: 1 dollar in indian rupes
+2026-05-08 16:18:14 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Processing batch: 1 tasks
+2026-05-08 16:18:14 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: 1 dollar in indian rupes
+2026-05-08 16:18:14 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Progress: 1/1
+2026-05-08 16:18:21 - JarvisAI-v12-Integrated - DEBUG - [add_task] - Added task_2430fb11: 1 dollar in indian rupes
+2026-05-08 16:18:21 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Processing batch: 1 tasks
+2026-05-08 16:18:21 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: 1 dollar in indian rupes
+2026-05-08 16:18:21 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Progress: 1/1
+2026-05-08 16:18:42 - JarvisAI-v12-Integrated - DEBUG - [add_task] - Added task_69459801: 1 dollar in rupees
+2026-05-08 16:18:43 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Processing batch: 1 tasks
+2026-05-08 16:18:43 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: 1 dollar in rupees
+2026-05-08 16:18:43 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Progress: 1/1
+2026-05-08 16:18:53 - JarvisAI-v12-Integrated - DEBUG - [add_task] - Added task_91d221db: convert 1 dollar in rupees
+2026-05-08 16:18:54 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Processing batch: 1 tasks
+2026-05-08 16:18:54 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: convert 1 dollar in rupees
+2026-05-08 16:18:54 - JarvisAI-v12-Integrated - INFO - [execute_batch] - Progress: 1/1
+2026-05-08 16:19:19 - JarvisAI-v12-Integrated - INFO - [execute_command] - Executing unknown: 1 dollar in ruppes
+2026-05-08 16:19:19 - JarvisAI-v12-Integrated - INFO - [chat_enhanced] - Processing chat query with context: 1 dollar in ruppes...
